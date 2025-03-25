@@ -3,3 +3,5 @@ python-Levenshtein
 textacy
 nltk
 spacy
+transformers
+openai
