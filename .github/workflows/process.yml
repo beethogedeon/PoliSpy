@@ -1,0 +1,45 @@
+name: Process media files
+
+on:
+  push:
+    paths:
+      - "data/structured_data/**"
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  process_files:
+    runs-on: ubuntu-latest
+    env:
+      OPENAI_AZURE_ENDPOINT: ${{ secrets.OPENAI_AZURE_ENDPOINT }}
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      OPENAI_API_VERSION: ${{ secrets.OPENAI_API_VERSION }}
+
+    steps:
+      - name: Checkout du code
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Installer Python et dépendances
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+          pip install -r requirements.txt
+
+      - name: Exécuter le script
+        run: python polispy/main.py  # Exécute ton script
+
+      - name: Configurer Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Ajouter et pousser les modifications
+        run: |
+          git add .
+          git commit -m "Mise à jour automatique via GitHub Actions" || echo "Aucune modification à valider"
+          git push
