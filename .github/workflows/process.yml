@@ -26,7 +26,7 @@ jobs:
         with:
           persist-credentials: true
 
-      - name: Dependencies installation
+      - name: Set up Python environment and install dependencies
         run: |
           python -m venv venv
           source venv/bin/activate
@@ -34,10 +34,14 @@ jobs:
           pip install -U spacy
 
       - name: Download spacy model
-        run: python -m spacy download en_core_web_sm
+        run: |
+          source venv/bin/activate
+          python -m spacy download en_core_web_sm
 
       - name: Execute update script
-        run: python polispy/main.py  # Exécute ton script
+        run: |
+          source venv/bin/activate
+          python polispy/main.py
 
       - name: Git Configuration
         run: |
