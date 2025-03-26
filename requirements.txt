@@ -1,7 +1,13 @@
 fuzzywuzzy
 python-Levenshtein
 textacy
+pandas
+csv
+glob
+numpy
 nltk
 spacy
 transformers
 openai
+langchain-openai
+pydantic

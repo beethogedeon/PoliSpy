@@ -30,6 +30,9 @@ jobs:
           source venv/bin/activate
           pip install -r requirements.txt
 
+      - name: Download spacy model
+        run: python -m spacy download en_core_web_sm
+
       - name: Execute update script
         run: python polispy/main.py  # Exécute ton script
 
