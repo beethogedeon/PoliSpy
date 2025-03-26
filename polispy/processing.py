@@ -10,7 +10,7 @@ nlp = spacy.load("en_core_web_sm")
 
 def fix_journal_names(df):
 
-    df['Journal'] = df['Journal'].astype('string') # Convert the column to string type
+    df['Publication'] = df['Publication'].astype('string') # Convert the column to string type
 
     # True names
     true_names = [
@@ -56,7 +56,7 @@ def fix_journal_names(df):
             return name
 
     # Apply the function to the "Publication" column of df1
-    df["Journals"] = df["Journal"].apply(match_journal_name)
+    df["Public"] = df["Publication"].apply(match_journal_name)
 
     return df
 
