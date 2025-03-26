@@ -2,8 +2,6 @@ fuzzywuzzy
 python-Levenshtein
 textacy
 pandas
-csv
-glob
 numpy
 nltk
 spacy
