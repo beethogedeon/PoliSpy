@@ -64,6 +64,7 @@ sentiment_prompt = ChatPromptTemplate.from_messages(
             For each sentence:
             Assign a tone score between -1 (strongly negative) and 1 (strongly positive).
             Classify the sentiment as Positive, Neutral, or Negative.
+            No extra-words or introduction please Just give the answer in json.
             """,
         ),
         ("human", "Sentence : {input}"),
@@ -76,7 +77,7 @@ political_prompt = ChatPromptTemplate.from_messages(
             "system",
             """As an expert in Canadian political analysis, your task is to classify the following sentences extracted from news articles or newspapers related to each Canadian party into predefined issues or topics discussed. Choose the category that best captures the main issue discussed.
             Categories: U.S.–Canada Relations & Tariffs, Economy, Taxation & Subsidies, Energy & Pipelines, Climate & Environment, Technology & Innovation, Security & Sovereignty, Immigration, Jobs & Labour, Small Business, Housing & Affordability, Healthcare, Education, Indigenous Affairs, Income Support, Public Spending, Childcare & Seniors, Transportation, Trade & Foreign Affairs, Other (if none of the above apply)
-            """,
+            No extra-words or introduction please Just give the answer in json""",
         ),
         ("human", "Sentence : {input}"),
     ]
@@ -87,12 +88,21 @@ political_chain = political_prompt | political_llm
 
 def get_sentiment(sentence: str):
     
-    result = sentiment_chain.invoke(sentence)
+    try:
     
-    return result.sentiment, result.tone_score
+        result = sentiment_chain.invoke(sentence)
+        
+        return result.sentiment, result.tone_score
+    except Exception as e:
+        return "Neutral", 0.0
 
 def get_category(sentence: str):
- 
-    result = political_chain.invoke(sentence)
     
-    return result.category
+    try:
+ 
+        result = political_chain.invoke(sentence)
+        
+        return result.category
+    
+    except Exception as e:
+        return "Other"

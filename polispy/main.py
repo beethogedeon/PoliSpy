@@ -5,7 +5,7 @@ from processing import process_files, split_sentences
 from nlp import get_sentiment, get_category
 
 def process_each_file(path):
-    df = pd.read_csv(path)
+    df = pd.read_excel(path)
     
     df.drop_duplicates(inplace=True)
     
@@ -16,6 +16,10 @@ def process_each_file(path):
     df.drop(columns=["Texte"], inplace=True)
     
     df = df.explode("Sentences", ignore_index=True)
+    
+    # Ensure there is no float in the "Sentences" column
+    df.dropna(subset=["Sentences"], inplace=True)
+    df["Sentences"] = df["Sentences"].astype(str)
     
     df["Sentiment"], df["Tone"] = zip(*df["Sentences"].apply(get_sentiment))
     
@@ -28,7 +32,7 @@ def merge_with_previous_version(new_df, file_name):
     
     if os.path.exists(final_data_path):
         # Charger l'ancienne version
-        old_df = pd.read_csv(final_data_path)
+        old_df = pd.read_excel(final_data_path)
         
         # Fusionner les deux DataFrames et supprimer les doublons
         merged_df = pd.concat([old_df, new_df], ignore_index=True)
@@ -59,7 +63,7 @@ def main():
             final_df = merge_with_previous_version(new_df, file)
             
             # Sauvegarder le fichier final
-            final_df.to_csv(f"data/final_data/{file}", index=False)
+            final_df.to_excel(f"data/final_data/{file}")
             
             print(f"File {file} processed and saved.")
             

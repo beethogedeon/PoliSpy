@@ -9,3 +9,4 @@ transformers
 openai
 langchain-openai
 pydantic
+ftfy
