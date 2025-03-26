@@ -47,11 +47,13 @@ def main():
         print("No files to process.")
         return
     else:
-        print("Processing files...")
         
         # process each file
         for file in list_files:
+            print(f"Processing file {file}...")
             new_df = process_each_file(f"data/structured_data/{file}")
+            
+            print("Size : ",len(new_df))
             
             # Vérifier et fusionner avec une version antérieure si elle existe
             final_df = merge_with_previous_version(new_df, file)
