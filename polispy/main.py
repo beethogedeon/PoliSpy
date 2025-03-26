@@ -42,7 +42,7 @@ def merge_with_previous_version(new_df, file_name):
 def main():
     
     # check if there is some files in the data/structured_data folder
-    list_files = os.listdir("data/structured")
+    list_files = os.listdir("data/structured_data")
     if not list_files:
         print("No files to process.")
         return
@@ -51,7 +51,7 @@ def main():
         
         # process each file
         for file in list_files:
-            new_df = process_each_file(f"data/structured/{file}")
+            new_df = process_each_file(f"data/structured_data/{file}")
             
             # Vérifier et fusionner avec une version antérieure si elle existe
             final_df = merge_with_previous_version(new_df, file)
