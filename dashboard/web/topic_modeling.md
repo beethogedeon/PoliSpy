@@ -9,18 +9,21 @@ PoliSpy leverages AI-driven topic modeling to identify the key themes covered in
 The following word clouds represent the most frequently mentioned topics associated with each political party. Larger words indicate higher prominence in media coverage.
 
 ### LPC
-![Word Cloud - Party 1](https://github.com/beethogedeon/PoliSpy/blob/main/graphics/agent_graph_sorted_imf_10_3_2025.png?raw=true)
+
+<img width="900" src="https://github.com/beethogedeon/PoliSpy/blob/main/graphics/agent_graph_sorted_imf_10_3_2025.png?raw=true">
 
 ### NDP
-![Word Cloud - Party 2](https://github.com/beethogedeon/PoliSpy/blob/main/graphics/agent_graph_sorted_imf_10_3_2025.png?raw=true)
+
+<img width="900" src="https://github.com/beethogedeon/PoliSpy/blob/main/graphics/agent_graph_sorted_imf_10_3_2025.png?raw=true">
 
 ### PCC
-![Word Cloud - Party 3](https://github.com/beethogedeon/PoliSpy/blob/main/graphics/agent_graph_sorted_imf_10_3_2025.png?raw=true)
+
+<img width="900" src="https://github.com/beethogedeon/PoliSpy/blob/main/graphics/agent_graph_sorted_imf_10_3_2025.png?raw=true">
 
 ## Evolution of Topics Over Time
 We also track how political narratives change over time. The graphs below illustrate topic trends and shifts in focus for each party.
 
-![Topic Evolution Graph](https://github.com/beethogedeon/PoliSpy/blob/main/graphics/agent_graph_sorted_imf_10_3_2025.png?raw=true)
+<img width="900" src="https://github.com/beethogedeon/PoliSpy/blob/main/graphics/agent_graph_sorted_imf_10_3_2025.png?raw=true">
 
 ---
 
