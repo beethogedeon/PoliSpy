@@ -11,7 +11,7 @@ The sentiment index ranges from **-1 (negative sentiment)** to **1 (positive sen
 ## Sentiment Trends
 _The following graphs illustrate the sentiment evolution for each political party over time:_
 
-![Sentiment Trend Graph](graphics/agent_graph_sorted_feb_2024.png)
+![Sentiment Trend Graph](https://github.com/beethogedeon/PoliSpy/blob/main/graphics/agent_graph_sorted_feb_2024.png?raw=true)
 
 ---
 _Last updated: [28/03/2025]_

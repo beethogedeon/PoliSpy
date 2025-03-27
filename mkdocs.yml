@@ -27,13 +27,13 @@ nav:
 theme:
   name: 'material'
   #custom_dir: 'theme'
-  favicon: 'https://www.isheero.com/wp-content/uploads/2022/07/cropped-Isheero_521x512_v2-32x32.png'
-  logo: 'https://www.isheero.com/wp-content/uploads/2022/07/Isheero_521x142px-BLANC.png'
+  #favicon: 'https://www.isheero.com/wp-content/uploads/2022/07/cropped-Isheero_521x512_v2-32x32.png'
+  #logo: 'https://www.isheero.com/wp-content/uploads/2022/07/Isheero_521x142px-BLANC.png'
 
   palette:
     - scheme: default
-      primary: 'pink'
-      accent: indigo
+      primary: 'blue'
+      accent: blue
       toggle:
           icon: material/toggle-switch-off-outline
           name: Switch to dark mode
