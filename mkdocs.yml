@@ -7,7 +7,7 @@ docs_dir: dashboard/web/
 
 repo_name: beethogedeon/polispy
 repo_url: https://github.com/beethogedeon/polispy
-edit_uri: tree/main/dashboard/web # Uncomment to define a different URI/URL for the "edit" option
+#edit_uri: tree/main/dashboard/web # Uncomment to define a different URI/URL for the "edit" option
 
 nav:
   - Home !: index.md
