@@ -1,7 +1,5 @@
 # **Welcome to PoliSpy**
-
 ---
-
 ## Your AI-Powered Political Sentiment Monitor
 
 PoliSpy is your go-to platform for tracking political trends across Canada. Using advanced artificial intelligence, we analyze data from Canadian press sources to provide real-time insights into the sentiment and topics surrounding political parties.
