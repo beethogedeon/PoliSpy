@@ -1,7 +1,6 @@
 # **Sentiment Analysis**
 
 ---
-
 ## Overview
 PoliSpy provides a comprehensive analysis of political sentiment in Canada using AI-powered data processing. Below, you will find the latest sentiment trends for each political party based on media coverage.
 
