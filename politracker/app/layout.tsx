@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google';
 import { BarChart3, LineChart, Menu } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
+import Image from 'next/image';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -36,13 +37,26 @@ export default function RootLayout({
         <div className="flex flex-col md:flex-row min-h-screen">
           {/* Mobile Header */}
           <header className="md:hidden bg-card border-b p-4">
-            <h1 className="text-xl font-bold">Political Media Analysis</h1>
+            {/* Add logo image here*/}
+            <Image
+              src="/images/policy.tracker.png" // Path to your logo file
+              alt="Logo"
+              width={40} // Adjust the width as needed
+              height={40} // Adjust the height as needed
+              //className="rounded-full" // Optional: Add styling for the image
+            />
           </header>
 
           {/* Sidebar */}
           <div className="w-full md:w-64 bg-card border-r">
-            <div className="p-6">
-              <h1 className="text-xl font-bold mb-6 hidden md:block">Political Media Analysis</h1>
+            <div className="p-6 items-center">
+            <Image
+              src="/images/policy.tracker.png" // Path to your logo file
+              alt="Logo"
+              width={240} // Adjust the width as needed
+              height={140} // Adjust the height as needed
+              //className="rounded-full" // Optional: Add styling for the image
+            />
               <nav className="flex md:flex-col gap-2">
                 {navItems.map((item) => (
                   <Link

@@ -19,20 +19,37 @@ interface CoverageAnalysisClientProps {
 }
 
 export default function CoverageAnalysisClient({ initialData }: CoverageAnalysisClientProps) {
+  // Fonction utilitaire pour compter les occurrences
+  const getTopNFrequent = (arr: string[], n: number): string[] => {
+    const countMap: Record<string, number> = {};
+
+    arr.forEach(item => {
+      countMap[item] = (countMap[item] || 0) + 1;
+    });
+
+    return Object.entries(countMap)
+      .sort((a, b) => b[1] - a[1]) // Tri par fréquence décroissante
+      .slice(0, n)
+      .map(([key]) => key);
+  };
+
   const [data] = useState<MediaData[]>(initialData);
   const [filteredData, setFilteredData] = useState<MediaData[]>(initialData);
+
   const [allMedias] = useState<string[]>(
     Array.from(new Set(initialData.map(item => item.Public))).sort()
   );
   const [selectedMedias, setSelectedMedias] = useState<string[]>(
-    Array.from(new Set(initialData.map(item => item.Public))).sort().slice(0, 8)
+    getTopNFrequent(initialData.map(item => item.Public), 8)
   );
+
   const [allCategories] = useState<string[]>(
     Array.from(new Set(initialData.map(item => item.category))).sort()
   );
   const [selectedCategories, setSelectedCategories] = useState<string[]>(
-    Array.from(new Set(initialData.map(item => item.category))).sort().slice(0, 8)
+    getTopNFrequent(initialData.map(item => item.category), 5)
   );
+
   const [timePeriod, setTimePeriod] = useState<TimePeriod>('overall');
   const campaignStartDate = new Date("2025-03-23");
 
