@@ -61,7 +61,7 @@ def add_week_month(source_party, date_column='Dates'):
 # 1. Define updated keyword dictionary with Mark Carney and leader names
 party_keywords = {
     "LPC": ["liberal party", "lpc","liberals", "justin trudeau", "trudeau", "mark carney", "carney"],
-    "PCC": ["conservative party", "pcc","conservatives", "pierre poilievre", "poilievre"],
+    "PCC": ["conservative party", "pcc","cpc", "conservatives", "pierre poilievre", "poilievre"],
     "NDP": ["ndp", "new democratic party", "jagmeet singh", "jagmeet"],
     "BQ": ["bloc québécois", "bq","bloc quebecois", "yves-françois blanchet", "blanchet"],
     "GPC": ["green party", "gpc","greens", "elizabeth may", "mike morrice", "may", "morrice"]
